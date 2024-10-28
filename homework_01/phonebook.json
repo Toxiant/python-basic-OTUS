@@ -1,0 +1,27 @@
+[
+    {
+        "name": "anton",
+        "phone_number": "12312313",
+        "id": "1"
+    },
+    {
+        "name": "qwerty",
+        "phone_number": "2334546556",
+        "id": "2"
+    },
+    {
+        "name": "zxcvbn",
+        "phone_number": "552255996444478",
+        "id": "4"
+    },
+    {
+        "name": "sergey",
+        "phone_number": "3344556677",
+        "id": "5"
+    },
+    {
+        "name": "qwerty",
+        "phone_number": "568989898445",
+        "id": "6"
+    }
+]
