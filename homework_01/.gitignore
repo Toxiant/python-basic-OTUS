@@ -2,5 +2,5 @@
 .idea/
 
 # Main
-old_version
-__init__.py
+old_version/
+__init__.py/
