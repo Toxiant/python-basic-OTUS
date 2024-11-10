@@ -7,12 +7,14 @@ def parse_phonebook(phonebook):
     print('id: ' + phonebook['id'])
     print(' ')
 
+
 def load_phonebook():
     '''Get all contacts'''
     with open('phonebook.json', 'r') as file:
         phonebook = json.load(file)
         for i in phonebook:
             parse_phonebook(i)
+
 
 def add_contact(**kwargs):
     '''Add new contact'''
@@ -44,7 +46,6 @@ def find_contact(**kwargs):
                 print_contact.append(i)
     if print_contact == null:
         print_contact = "Contact doesn't exist"
-
     return print_contact
 
 
@@ -55,7 +56,6 @@ def delete_contact(**kwargs):
         print(test)
     else:
         if len(test) == 1:
-#   kwargs = str(input('Enter data - '))
             with open("phonebook.json", "r", encoding="utf-8") as file:
                 contact = json.load(file)
                 for i in test:
@@ -80,8 +80,9 @@ def update_contact(**kwargs):
         print(test)
     else:
         if len(test) == 1:
-            id_update_contact = int(test["id"]) - 1
-            parse_phonebook(test)
+            for i in test:
+                id_update_contact = int(i["id"]) - 1
+                parse_phonebook(i)
             with open("phonebook.json", "r", encoding="utf-8") as file:
                 edit_contact = json.load(file)
                 edit_contact[id_update_contact].update({
@@ -102,31 +103,33 @@ def update_contact(**kwargs):
             with open('phonebook.json', "w", encoding="utf-8") as file:
                 json.dump(edit_contact, file, indent=4)
 
+
 def start(command):
-
     if command == "1":
+        print("\n")
         load_phonebook()
-
     if command == "2":
+        print("\n")
         add_contact()
-
     if command == "3":
+        print("\n")
         test = find_contact()
         if test == "Contact doesn't exist":
             print(test + "\n")
         else:
             for i in test:
                 parse_phonebook(i)
-
     if command == "4":
+        print("\n")
         update_contact()
         print("Edited successfully")
-
     if command == "5":
+        print("\n")
         delete_contact()
         print("Deleted successfully")
-
-
+    if command == "6":
+        print("\n")
+        exit()
 
 if __name__ == "__main__":
     while True:
@@ -136,8 +139,9 @@ if __name__ == "__main__":
                 "Show all contacts - 1 \n "
                 "Create contact - 2 \n "
                 "Find contact - 3 \n "
-                "Edit contact - 4 \n"
-                "Delete contact - 5 \n"
-                "EEnter option number - "
+                "Edit contact - 4 \n "
+                "Delete contact - 5 \n "
+                "Exit - 6 \n"
+                "Enter option number - "
             )
         )
