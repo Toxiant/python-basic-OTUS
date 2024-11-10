@@ -1,6 +1,6 @@
 # IDEs
-.idea/
+.idea
 
 # Main
-/old_version
+old_version
 __init__.py
