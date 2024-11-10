@@ -1,4 +1,5 @@
 import json
+import sys
 
 
 def parse_phonebook(phonebook):
@@ -129,7 +130,7 @@ def start(command):
         print("Deleted successfully")
     if command == "6":
         print("\n")
-        exit()
+        sys.exit()
 
 if __name__ == "__main__":
     while True:
