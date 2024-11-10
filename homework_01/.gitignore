@@ -1,6 +1,2 @@
 # IDEs
 .idea/
-
-#trash
-__init__.py
-old_version
